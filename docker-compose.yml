@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: healthcare_db_env
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./db/seed.sql:/docker-entrypoint-initdb.d/seed.sql
+      - ./db/healthcare_dataset.csv:/data/healthcare_dataset.csv
+    ports:
+      - "5433:5432"
+
+  web:
+    build: .
+    container_name: healthcare_app_env
+    depends_on:
+      - db
+    env_file:
+      - .env
+    environment:
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_PORT: ${DATABASE_PORT}
+    ports:
+      - "8081:8080"
+
