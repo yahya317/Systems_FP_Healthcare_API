@@ -44,28 +44,38 @@ This serves as a minimal, functional data pipeline demonstrating SQL, containeri
 **Requirements**
 - Docker Desktop installed
 - .env file in project root (copied from .env.example)
-- Dataset present at db/healthcare_dataset.csv
+- Dataset present at: *db/healthcare_dataset.csv*
 
 1. Copy the environment template
 
+```bash
 cp .env.example .env
+```
 
 2. Build and run the stack
 
+```bash
 docker compose up --build
+```
 
 3. API Health Check
 
+```bash
 curl http://localhost:8081/health
+```
 
 **Available Endpoints**
 1. All patients
 
+```bash
 GET /patients
+```
 
 2. Filter by condition
 
+```bash
 GET /patients?condition=Cancer
+```
 
 3. Disease probability analytics
 
