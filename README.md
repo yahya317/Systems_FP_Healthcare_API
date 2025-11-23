@@ -117,7 +117,7 @@ Visit: http://localhost:8081/dashboard
 ![Dashboard Screenshot](assets/dashboard_check.png)
 
 ### Filter by Condition Example
-![Filter by Condition](assets/filter_by_conditions.png)
+![Filter by Condition](assets/filter_by_condition.png)
 
 
 ## 6️⃣ What’s Next (Future Improvements)
