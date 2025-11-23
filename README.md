@@ -47,23 +47,31 @@ This serves as a minimal, functional data pipeline demonstrating SQL, containeri
 - Dataset present at db/healthcare_dataset.csv
 
 1. Copy the environment template
+
 cp .env.example .env
 
 2. Build and run the stack
+
 docker compose up --build
 
 3. API Health Check
+
 curl http://localhost:8081/health
 
 **Available Endpoints**
 1. All patients
+
 GET /patients
 
 2. Filter by condition
+
 GET /patients?condition=Cancer
 
 3. Disease probability analytics
+
+```bash
 GET /analytics/disease_probabilities
+```
 
 Returns:
 
@@ -127,7 +135,7 @@ Visit: http://localhost:8081/dashboard
 - Deploying to Render/Azure for public access (+Extra Credit)
 
 ## 7️⃣ Links
-GitHub Repo: Add your repo link here.
+GitHub Repo: https://github.com/yahya317/Systems_FP_Healthcare_API
 Cloud Deployment: Not deployed.
 
 ## Credits
